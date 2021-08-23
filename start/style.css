@@ -1,0 +1,202 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Nunito Sans", sans-serif;
+    background-image: linear-gradient(to bottom right, #67b26f, #4ca2cd);
+}
+
+/* =========== START GAME =========== */
+#start-game {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: #333;
+}
+
+#start-game h1 {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 4rem;
+}
+
+.level-container {
+    width: 100%;
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #fff;
+}
+
+.level-container p {
+    font-size: 2rem;
+    font-family: "Bungee Inline", sans-serif;
+}
+
+.select-container {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#level-option {
+    padding: 1rem 2rem;
+    border-radius: 4px;
+}
+
+#btn-start-game {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* =========== PLAY GAME =========== */
+#game {
+    display: none;
+    height: 100vh;
+    width: 100%;
+}
+
+.control {
+    flex : 0 0 20%;
+    background-color: #fff;
+    height: 100%;
+}
+
+.control h1 {
+    font-family: "Bungee Inline", sans-serif;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.time-game, .step-game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#time, #step {
+    font-size: 1.5rem;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 0 0 80%;
+}
+
+
+.memory-game {
+    display: grid;
+    gap: 10px;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: 190px;
+    height: 250px;
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    position: absolute;
+    max-width: 100%;
+    backface-visibility: hidden;
+    width: 190px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+/* =========== END GAME =========== */
+#end-game {
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    background-color: #fff;
+    width: 100%;
+    padding: 50px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-play-again, #btn-reload {
+    display: inline-block;
+    width: 130px;
+    height: 50px;
+    margin: 0 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.info h1 {
+    font-family: "Bungee Inline", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.time-box, .step-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.time-box p, .step-box p {
+    font-weight: 600;
+    margin-top: 10px;
+}
